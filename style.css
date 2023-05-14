@@ -21,6 +21,14 @@ body{
     animation: pipe-animation 2s infinite linear;
 }
 
+button{
+    background-color: rgb(9, 7, 137);
+    color: aliceblue;
+    border-radius: 20px;
+    position: relative;
+}
+
+
 .mario{
     width: 150px;
     position: absolute;

@@ -6,7 +6,10 @@ const contadorElemento = document.getElementById('contador');
 
 const jump = () => {
     mario.classList.add('jump');
-
+    var audio = new Audio('efect/audioj.mp3');
+    audio.addEventListener('canplaythrough', function() {
+    audio.play();
+    });
     setTimeout(() => {
         mario.classList.remove('jump');
     }, 500);
@@ -24,6 +27,10 @@ const loop = setInterval(() => {
 
     if(pipePosition <= 120 && marioPosition > 0 && marioPosition < 80){
        // let contadorAtivo = false;
+       var audio = new Audio('efect/audioq.mp3');
+              audio.addEventListener('canplaythrough', function() {
+              audio.play();
+        });
         pipe.style.animation = 'none';
         pipe.style.left = `${pipePosition}px`;
 
@@ -38,5 +45,13 @@ const loop = setInterval(() => {
     }
 
 }, 10);
+
+const restartButton = document.getElementById('restartButton');
+
+const restartPage = () => {
+  location.reload();
+};
+
+restartButton.addEventListener('click', restartPage);
 
 document.addEventListener('keydown', jump);
